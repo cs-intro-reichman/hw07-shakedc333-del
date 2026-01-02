@@ -5,11 +5,16 @@ public class IsSorted {
         return isSorted(a, 0);
     }
 
-    // Helper recursive function
+
     private static boolean isSorted(int[] a, int i) {
-        //// Replace the following statement with your code
-        return false; 
+    // Base case: no more pairs to compare
+    if (i >= a.length - 1) {
+        return true;
     }
+
+    // Check current pair and recurse on the rest
+    return (a[i] <= a[i + 1]) && isSorted(a, i + 1);
+}
 
     public static void main(String[] args) {
         int[] a = {1, 2, 2, 5};
